@@ -5,12 +5,19 @@ const now = new Date().toISOString();
 export const sampleProfile: UserStyleProfile = {
   id: 'profile-1',
   styleKeywords: ['elevated basics', 'minimal', 'smart casual'],
-  favoriteBrands: ['COS', 'Uniqlo', 'A.P.C.'],
+  favoriteBrands: ['COS', 'Uniqlo', 'Buck Mason'],
   avoidedBrands: ['LogoMax'],
   budgetTier: 'mid-range',
   preferredFits: ['relaxed', 'tailored'],
   preferredColors: ['white', 'olive', 'navy', 'charcoal'],
   avoidedColors: ['neon'],
+  preferredSilhouettes: ['baggy denim', 'boxy tops', 'structured outerwear'],
+  preferredMaterials: ['cotton', 'merino', 'denim'],
+  avoidedMaterials: ['polyester'],
+  preferredBrandOrigins: ['United States', 'Japan'],
+  prioritizeAmericanMade: true,
+  climateNotes: 'Mild winters and warm summers; layers are useful year-round.',
+  homeLocationLabel: 'Austin, TX',
   sizes: { tops: 'M', bottoms: '32', outerwear: 'M', footwear: '10' },
   occasionTendencies: ['office', 'dinner', 'weekend city'],
   notes: 'Prefers no loud logos and values fabric quality.'
@@ -30,10 +37,10 @@ export const sampleOutfits: Outfit[] = [
 ];
 
 export const mockBrandKnowledge: BrandProfile[] = [
-  { id: 'b1', name: 'Uniqlo', styleTags: ['minimal', 'basics', 'functional'], priceTier: 'budget', categoryStrength: ['tops', 'knitwear', 'outerwear'], positioning: 'Affordable technical basics', notes: 'Great for layering essentials.' },
-  { id: 'b2', name: 'COS', styleTags: ['minimal', 'architectural', 'smart casual'], priceTier: 'mid-range', categoryStrength: ['trousers', 'outerwear', 'shirts'], positioning: 'Modern elevated silhouettes', notes: 'Strong for clean tailoring.' },
-  { id: 'b3', name: 'A.P.C.', styleTags: ['french', 'minimal', 'denim'], priceTier: 'premium', categoryStrength: ['denim', 'outerwear', 'tees'], positioning: 'Contemporary Parisian staples', notes: 'Low-logo wardrobe builders.' },
-  { id: 'b4', name: 'Buck Mason', styleTags: ['americana', 'rugged', 'basics'], priceTier: 'mid-range', categoryStrength: ['tees', 'outerwear', 'denim'], positioning: 'Refined casual core pieces', notes: 'Reliable elevated basics for menswear.' },
-  { id: 'b5', name: 'Theory', styleTags: ['tailored', 'office', 'sleek'], priceTier: 'premium', categoryStrength: ['suiting', 'trousers', 'shirts'], positioning: 'Polished workwear wardrobe', notes: 'Great for business-casual capsules.' },
-  { id: 'b6', name: 'Zegna', styleTags: ['luxury', 'tailoring', 'quiet luxury'], priceTier: 'luxury', categoryStrength: ['suiting', 'outerwear', 'knitwear'], positioning: 'High-end Italian luxury', notes: 'For premium tailoring investments.' }
+  { id: 'b1', name: 'Uniqlo', styleTags: ['minimal', 'basics', 'functional'], fitTags: ['regular', 'relaxed'], preferredMaterialTags: ['cotton', 'denim'], originCountry: 'Japan', madeInUSA: false, priceTier: 'budget', categoryStrength: ['tops', 'knitwear', 'outerwear'], positioning: 'Affordable technical basics', notes: 'Great for layering essentials.' },
+  { id: 'b2', name: 'COS', styleTags: ['minimal', 'architectural', 'smart casual'], fitTags: ['relaxed', 'tailored'], preferredMaterialTags: ['cotton', 'wool'], originCountry: 'Sweden', madeInUSA: false, priceTier: 'mid-range', categoryStrength: ['trousers', 'outerwear', 'shirts'], positioning: 'Modern elevated silhouettes', notes: 'Strong for clean tailoring.' },
+  { id: 'b3', name: 'A.P.C.', styleTags: ['french', 'minimal', 'denim'], fitTags: ['straight', 'relaxed'], preferredMaterialTags: ['denim', 'cotton'], originCountry: 'France', madeInUSA: false, priceTier: 'premium', categoryStrength: ['denim', 'outerwear', 'tees'], positioning: 'Contemporary Parisian staples', notes: 'Low-logo wardrobe builders.' },
+  { id: 'b4', name: 'Buck Mason', styleTags: ['americana', 'rugged', 'basics'], fitTags: ['relaxed', 'boxy'], preferredMaterialTags: ['denim', 'cotton', 'jersey'], originCountry: 'United States', madeInUSA: true, priceTier: 'mid-range', categoryStrength: ['tees', 'outerwear', 'denim'], positioning: 'Refined casual core pieces', notes: 'Reliable elevated basics for menswear.' },
+  { id: 'b5', name: 'Theory', styleTags: ['tailored', 'office', 'sleek'], fitTags: ['tailored', 'slim'], preferredMaterialTags: ['wool', 'cotton'], originCountry: 'United States', madeInUSA: false, priceTier: 'premium', categoryStrength: ['suiting', 'trousers', 'shirts'], positioning: 'Polished workwear wardrobe', notes: 'Great for business-casual capsules.' },
+  { id: 'b6', name: 'Zegna', styleTags: ['luxury', 'tailoring', 'quiet luxury'], fitTags: ['tailored', 'classic'], preferredMaterialTags: ['wool', 'cashmere'], originCountry: 'Italy', madeInUSA: false, priceTier: 'luxury', categoryStrength: ['suiting', 'outerwear', 'knitwear'], positioning: 'High-end Italian luxury', notes: 'For premium tailoring investments.' }
 ];

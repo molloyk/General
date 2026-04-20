@@ -11,6 +11,13 @@ export interface UserStyleProfile {
   preferredFits: string[];
   preferredColors: string[];
   avoidedColors: string[];
+  preferredSilhouettes: string[];
+  preferredMaterials: string[];
+  avoidedMaterials: string[];
+  preferredBrandOrigins: string[];
+  prioritizeAmericanMade: boolean;
+  climateNotes: string;
+  homeLocationLabel?: string;
   sizes: { tops: string; bottoms: string; outerwear: string; footwear: string };
   occasionTendencies: string[];
   notes: string;
@@ -91,6 +98,10 @@ export interface BrandProfile {
   id: string;
   name: string;
   styleTags: string[];
+  fitTags: string[];
+  preferredMaterialTags: string[];
+  originCountry: string;
+  madeInUSA?: boolean;
   priceTier: BudgetTier;
   categoryStrength: string[];
   positioning: string;

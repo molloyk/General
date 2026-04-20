@@ -15,6 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="links">
             <strong>General</strong>
             <Link href="/andthe">anDThe</Link>
+            <Link href="/andthe/capture">Capture</Link>
             <Link href="/andthe/wardrobe">Wardrobe</Link>
             <Link href="/andthe/outfits">Outfits</Link>
             <Link href="/andthe/generate">Generate</Link>

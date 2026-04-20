@@ -11,13 +11,15 @@ export function GenerateClient() {
   const { garments, outfits, profile, saveOutfit, isHydrated } = useAndTheState();
   const [selectedGarmentId, setSelectedGarmentId] = useState('');
   const [occasion, setOccasion] = useState('');
+  const [weatherSummary, setWeatherSummary] = useState('');
+  const [locationLabel, setLocationLabel] = useState(profile.homeLocationLabel ?? '');
   const [results, setResults] = useState<OutfitRecommendation[]>([]);
 
   if (!isHydrated) return <p>Loading recommender…</p>;
 
   return (
     <div className="grid">
-      <SectionHeader title="AI Outfit Recommendations" description="Combine wardrobe inventory + saved outfit history to generate net-new looks." />
+      <SectionHeader title="AI Outfit Recommendations" description="Combine closet inventory + outfit history + local weather context to generate net-new looks." />
       <div className="card row">
         <label>Build from garment
           <select value={selectedGarmentId} onChange={(e) => setSelectedGarmentId(e.target.value)}>
@@ -26,7 +28,17 @@ export function GenerateClient() {
           </select>
         </label>
         <label>Occasion<input className="input" value={occasion} onChange={(e) => setOccasion(e.target.value)} placeholder="office, date night..." /></label>
-        <button className="btn primary" onClick={async () => setResults(await generateOutfitRecommendations({ garments, outfits, profile, selectedGarmentId: selectedGarmentId || undefined, occasion: occasion || undefined }))}>Generate</button>
+        <label>Location<input className="input" value={locationLabel} onChange={(e) => setLocationLabel(e.target.value)} placeholder="Austin, TX" /></label>
+        <label>Weather summary<input className="input" value={weatherSummary} onChange={(e) => setWeatherSummary(e.target.value)} placeholder="warm + light rain" /></label>
+        <button className="btn primary" onClick={async () => setResults(await generateOutfitRecommendations({
+          garments,
+          outfits,
+          profile,
+          selectedGarmentId: selectedGarmentId || undefined,
+          occasion: occasion || undefined,
+          locationLabel: locationLabel || profile.homeLocationLabel,
+          weatherSummary: weatherSummary || undefined
+        }))}>Generate</button>
       </div>
       <div className="grid cols-2">
         {results.map((rec) => (
