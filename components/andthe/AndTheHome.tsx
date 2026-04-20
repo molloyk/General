@@ -17,8 +17,9 @@ export function AndTheHome() {
         <div className="card"><h3>{profile.favoriteBrands.length}</h3><small>Favorite brands tracked</small></div>
       </div>
       <div className="grid cols-3">
-        <Link className="card" href="/andthe/wardrobe"><h3>Wardrobe Catalog</h3><p>Search, filter, and manage garments.</p></Link>
-        <Link className="card" href="/andthe/outfits"><h3>Outfit Library</h3><p>Store and link complete looks.</p></Link>
+        <Link className="card" href="/andthe/capture"><h3>Closet Capture</h3><p>Use camera/upload to add single items or full outfits.</p></Link>
+        <Link className="card" href="/andthe/wardrobe"><h3>Closet Catalog</h3><p>Search, filter, and manage individual pieces.</p></Link>
+        <Link className="card" href="/andthe/outfits"><h3>Wardrobe (Outfits)</h3><p>Store and link complete looks.</p></Link>
         <Link className="card" href="/andthe/generate"><h3>AI Outfit Generator</h3><p>Create recommendations from your closet data.</p></Link>
         <Link className="card" href="/andthe/shop"><h3>Shopping Assistant</h3><p>Get brand direction for missing pieces.</p></Link>
         <Link className="card" href="/andthe/profile"><h3>Style Profile</h3><p>Tune preferences, sizing, fit, and budget.</p></Link>

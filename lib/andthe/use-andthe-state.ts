@@ -5,7 +5,24 @@ import { readStudioData, replaceProfile, upsertGarment, upsertOutfit, writeStudi
 import { Garment, Outfit, UserStyleProfile, AndTheData } from './types';
 
 const emptyData: AndTheData = { garments: [], outfits: [], profile: {
-  id: 'profile-empty', styleKeywords: [], favoriteBrands: [], avoidedBrands: [], budgetTier: 'mid-range', preferredFits: [], preferredColors: [], avoidedColors: [], sizes: { tops: '', bottoms: '', outerwear: '', footwear: '' }, occasionTendencies: [], notes: ''
+  id: 'profile-empty',
+  styleKeywords: [],
+  favoriteBrands: [],
+  avoidedBrands: [],
+  budgetTier: 'mid-range',
+  preferredFits: [],
+  preferredColors: [],
+  avoidedColors: [],
+  preferredSilhouettes: [],
+  preferredMaterials: [],
+  avoidedMaterials: [],
+  preferredBrandOrigins: [],
+  prioritizeAmericanMade: false,
+  climateNotes: '',
+  homeLocationLabel: '',
+  sizes: { tops: '', bottoms: '', outerwear: '', footwear: '' },
+  occasionTendencies: [],
+  notes: ''
 } };
 
 export function useAndTheState() {
